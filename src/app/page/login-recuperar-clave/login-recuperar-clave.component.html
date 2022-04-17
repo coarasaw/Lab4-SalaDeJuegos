@@ -1,0 +1,29 @@
+<div class="conteiner mt-3">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <div class="contenedorLogin">
+            <!-- <img class="mb-4" src="../assets/brand/login3.svg" alt="Login" width="192" height="180"> -->
+            <h2 class="text-center" tituloPropio>Recuperar Contraseña</h2>
+          </div>
+          <form [formGroup]="recuperarForm" (ngSubmit)="recuperarClave()">
+            <div class="mb-3">
+              <input type="text" formControlName="usuarioCorreo" class="from-control form-control-lg" placeholder="Ingrese su correo">
+              <div class="text-danger" 
+                *ngIf="recuperarForm.get('usuarioCorreo')?.hasError('required') && recuperarForm.get('usuarioCorreo')?.touched">
+                El correo <strong>es obligatorio</strong>
+              </div>
+              <div class="text-danger"
+                *ngIf="recuperarForm.get('usuarioCorreo')?.hasError('email') && recuperarForm.get('usuarioCorreo')?.touched">
+                Correo <strong>Invalido</strong>
+              </div>
+            </div>
+            <br>
+            <button routerLink="/login" class="btn btn-secondary btn-lg">Volver</button>
+            <button type="submit" [disabled]="recuperarForm.invalid" class="btn btn-primary btn-lg float-end">Aceptar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-pie-principal></app-pie-principal>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "saladejuegoscoarasa"
+  },
+  "targets": {
+    "saladejuegoscoarasa": {
+      "hosting": {
+        "SalaDeJuegos": [
+          "saladejuegoscoarasa"
+        ]
+      }
+    }
+  }
+}
